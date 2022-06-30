@@ -1,13 +1,17 @@
 package com.critter.chronologer;
 
-import com.critter.chronologer.pet.PetController;
+import com.critter.chronologer.pet.controllers.PetController;
 import com.critter.chronologer.pet.PetType;
 import com.critter.chronologer.user.*;
+import com.critter.chronologer.user.controllers.UserController;
+import com.critter.chronologer.user.dto.CustomerDTO;
+import com.critter.chronologer.user.dto.EmployeeDTO;
+import com.critter.chronologer.user.dto.EmployeeRequestDTO;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import com.critter.chronologer.pet.PetDTO;
-import com.critter.chronologer.schedule.ScheduleController;
-import com.critter.chronologer.schedule.ScheduleDTO;
+import com.critter.chronologer.pet.dto.PetDTO;
+import com.critter.chronologer.schedule.controllers.ScheduleController;
+import com.critter.chronologer.schedule.dto.ScheduleDTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

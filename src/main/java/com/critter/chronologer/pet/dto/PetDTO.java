@@ -1,4 +1,6 @@
-package com.critter.chronologer.pet;
+package com.critter.chronologer.pet.dto;
+
+import com.critter.chronologer.pet.PetType;
 
 import java.time.LocalDate;
 

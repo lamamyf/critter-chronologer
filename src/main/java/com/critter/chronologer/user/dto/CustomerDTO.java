@@ -1,4 +1,4 @@
-package com.critter.chronologer.user;
+package com.critter.chronologer.user.dto;
 
 import java.util.List;
 

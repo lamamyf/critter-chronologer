@@ -1,5 +1,8 @@
-package com.critter.chronologer.user;
+package com.critter.chronologer.user.controllers;
 
+import com.critter.chronologer.user.dto.CustomerDTO;
+import com.critter.chronologer.user.dto.EmployeeDTO;
+import com.critter.chronologer.user.dto.EmployeeRequestDTO;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.DayOfWeek;

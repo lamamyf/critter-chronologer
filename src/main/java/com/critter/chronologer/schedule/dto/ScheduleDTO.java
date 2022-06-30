@@ -1,4 +1,4 @@
-package com.critter.chronologer.schedule;
+package com.critter.chronologer.schedule.dto;
 
 import com.critter.chronologer.user.EmployeeSkill;
 
