@@ -1,4 +1,4 @@
-package com.critter.chronologer.pet;
+package com.critter.chronologer.pet.dao.entities.enms;
 
 /**
  * A example list of pet type metadata that could be included on a request to create a pet.

@@ -1,6 +1,6 @@
 package com.critter.chronologer.user.dto;
 
-import com.critter.chronologer.user.EmployeeSkill;
+import com.critter.chronologer.user.entities.enums.EmployeeSkill;
 
 import java.time.DayOfWeek;
 import java.util.Set;

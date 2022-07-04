@@ -1,12 +1,12 @@
 package com.critter.chronologer;
 
 import com.critter.chronologer.pet.controllers.PetController;
-import com.critter.chronologer.pet.PetType;
-import com.critter.chronologer.user.*;
+import com.critter.chronologer.pet.dao.entities.enms.PetType;
 import com.critter.chronologer.user.controllers.UserController;
 import com.critter.chronologer.user.dto.CustomerDTO;
 import com.critter.chronologer.user.dto.EmployeeDTO;
 import com.critter.chronologer.user.dto.EmployeeRequestDTO;
+import com.critter.chronologer.user.entities.enums.EmployeeSkill;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.critter.chronologer.pet.dto.PetDTO;
