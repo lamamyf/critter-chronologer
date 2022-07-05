@@ -1,4 +1,4 @@
-package com.critter.chronologer.user.entities.enums;
+package com.critter.chronologer.user.dao.entities.enums;
 
 /**
  * A example list of employee skills that could be included on an employee or a schedule request.

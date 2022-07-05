@@ -1,6 +1,6 @@
-package com.critter.chronologer.user.entities;
+package com.critter.chronologer.user.dao.entities;
 
-import com.critter.chronologer.user.entities.enums.EmployeeSkill;
+import com.critter.chronologer.user.dao.entities.enums.EmployeeSkill;
 
 import javax.persistence.*;
 import java.time.DayOfWeek;
