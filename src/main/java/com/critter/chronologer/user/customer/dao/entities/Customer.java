@@ -1,4 +1,4 @@
-package com.critter.chronologer.user.dao.entities;
+package com.critter.chronologer.user.customer.dao.entities;
 
 import com.critter.chronologer.pet.dao.entities.Pet;
 import lombok.Getter;
@@ -22,4 +22,13 @@ public class Customer {
 
     @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Pet> pets;
+
+    public Customer() {
+    }
+
+    public Customer(String name, String phoneNumber, String notes) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.notes = notes;
+    }
 }

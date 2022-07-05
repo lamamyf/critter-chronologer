@@ -1,8 +1,8 @@
 package com.critter.chronologer.schedule.entities;
 
 import com.critter.chronologer.pet.dao.entities.Pet;
-import com.critter.chronologer.user.dao.entities.Employee;
-import com.critter.chronologer.user.dao.entities.enums.EmployeeSkill;
+import com.critter.chronologer.user.employee.dao.entities.Employee;
+import com.critter.chronologer.user.employee.dao.entities.enums.EmployeeSkill;
 
 import javax.persistence.*;
 import java.time.LocalDate;

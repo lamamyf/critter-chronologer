@@ -1,6 +1,6 @@
-package com.critter.chronologer.user.dto;
+package com.critter.chronologer.user.employee.dto;
 
-import com.critter.chronologer.user.dao.entities.enums.EmployeeSkill;
+import com.critter.chronologer.user.employee.dao.entities.enums.EmployeeSkill;
 
 import java.time.LocalDate;
 import java.util.Set;

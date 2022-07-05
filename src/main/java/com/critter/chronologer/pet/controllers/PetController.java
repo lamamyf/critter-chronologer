@@ -6,7 +6,6 @@ import com.critter.chronologer.pet.dto.PetDTO;
 import com.critter.chronologer.pet.services.PetService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.projection.SpelAwareProxyProjectionFactory;
-import org.springframework.data.util.Streamable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,7 +35,7 @@ public class PetController {
 
     @GetMapping
     public List<PetDTO> getPets(){
-        return Streamable.of(petService.findAll()).map(this::toPetDto).toList();
+        return petService.findAll().stream().map(this::toPetDto).toList();
     }
 
     @GetMapping("/owner/{ownerId}")

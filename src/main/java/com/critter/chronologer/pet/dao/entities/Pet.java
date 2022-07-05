@@ -1,7 +1,7 @@
 package com.critter.chronologer.pet.dao.entities;
 
 import com.critter.chronologer.pet.dao.entities.enms.PetType;
-import com.critter.chronologer.user.dao.entities.Customer;
+import com.critter.chronologer.user.customer.dao.entities.Customer;
 import lombok.Getter;
 
 import javax.persistence.*;
