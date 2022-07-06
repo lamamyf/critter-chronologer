@@ -3,24 +3,19 @@ package com.critter.chronologer;
 import com.critter.chronologer.pet.controllers.PetController;
 import com.critter.chronologer.user.customer.controllers.CustomerController;
 import com.critter.chronologer.user.employee.controllers.EmployeeController;
-import com.critter.chronologer.user.customer.dto.CustomerDTO;
-import com.critter.chronologer.user.employee.dto.EmployeeDTO;
-import com.critter.chronologer.user.employee.dto.EmployeeRequestDTO;
 import com.critter.chronologer.user.employee.dao.entities.enums.EmployeeSkill;
+import com.critter.chronologer.user.employee.dto.FindEmployeesRequest;
 import com.google.common.collect.Sets;
 import com.critter.chronologer.schedule.controllers.ScheduleController;
 import com.critter.chronologer.schedule.dto.ScheduleDTO;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * This is a set of functional tests to validate the basic capabilities desired for this application.
@@ -265,11 +260,9 @@ public class CritterFunctionalTest {
 //        return petDTO;
 //    }
 
-    private static EmployeeRequestDTO createEmployeeRequestDTO() {
-        EmployeeRequestDTO employeeRequestDTO = new EmployeeRequestDTO();
-        employeeRequestDTO.setDate(LocalDate.of(2019, 12, 25));
-        employeeRequestDTO.setSkills(Sets.newHashSet(EmployeeSkill.FEEDING, EmployeeSkill.WALKING));
-        return employeeRequestDTO;
+    private static FindEmployeesRequest createEmployeeRequestDTO() {
+        return new FindEmployeesRequest(Sets.newHashSet(EmployeeSkill.FEEDING, EmployeeSkill.WALKING),
+                                        LocalDate.of(2019, 12, 25));
     }
 
     private static ScheduleDTO createScheduleDTO(List<Long> petIds, List<Long> employeeIds, LocalDate date, Set<EmployeeSkill> activities) {

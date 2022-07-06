@@ -22,4 +22,17 @@ public class Employee {
     @ElementCollection
     @CollectionTable
     private Set<DayOfWeek> daysAvailable;
+
+    public Employee() {
+    }
+
+    public Employee(String name, Set<EmployeeSkill> skills, Set<DayOfWeek> daysAvailable) {
+        this.name = name;
+        this.skills = skills;
+        this.daysAvailable = daysAvailable;
+    }
+
+    public void setDaysAvailable(Set<DayOfWeek> daysAvailable) {
+        this.daysAvailable = daysAvailable;
+    }
 }
