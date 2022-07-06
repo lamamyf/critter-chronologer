@@ -265,14 +265,14 @@ public class CritterFunctionalTest {
                                         LocalDate.of(2019, 12, 25));
     }
 
-    private static ScheduleDTO createScheduleDTO(List<Long> petIds, List<Long> employeeIds, LocalDate date, Set<EmployeeSkill> activities) {
-        ScheduleDTO scheduleDTO = new ScheduleDTO();
-        scheduleDTO.setPetIds(petIds);
-        scheduleDTO.setEmployeeIds(employeeIds);
-        scheduleDTO.setDate(date);
-        scheduleDTO.setActivities(activities);
-        return scheduleDTO;
-    }
+//    private static ScheduleDTO createScheduleDTO(List<Long> petIds, List<Long> employeeIds, LocalDate date, Set<EmployeeSkill> activities) {
+//        ScheduleDTO scheduleDTO = new ScheduleDTO();
+//        scheduleDTO.setPetIds(petIds);
+//        scheduleDTO.setEmployeeIds(employeeIds);
+//        scheduleDTO.setDate(date);
+//        scheduleDTO.setActivities(activities);
+//        return scheduleDTO;
+//    }
 
 //    private ScheduleDTO populateSchedule(int numEmployees, int numPets, LocalDate date, Set<EmployeeSkill> activities) {
 //        List<Long> employeeIds = IntStream.range(0, numEmployees)

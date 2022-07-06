@@ -1,59 +1,26 @@
 package com.critter.chronologer.schedule.dto;
 
 import com.critter.chronologer.user.employee.dao.entities.enums.EmployeeSkill;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
 /**
- * Represents the form that schedule request and response data takes. Does not map
+ * Represents the form that schedule response data takes. Does not map
  * to the database directly.
  */
-public class ScheduleDTO {
-    private long id;
-    private List<Long> employeeIds;
-    private List<Long> petIds;
-    private LocalDate date;
-    private Set<EmployeeSkill> activities;
+public interface ScheduleDTO {
+    Long getId();
 
-    public long getId(){
-        return id;
-    }
-    
-    public void setId(long id){
-        this.id = id;
-    }
-    
-    public List<Long> getEmployeeIds() {
-        return employeeIds;
-    }
+    @Value("#{target.getEmployees()?.![getId()]}")
+    List<Long> getEmployeeIds();
 
-    public void setEmployeeIds(List<Long> employeeIds) {
-        this.employeeIds = employeeIds;
-    }
+    @Value("#{target.getPets()?.![getId()]}")
+    List<Long> getPetIds();
 
-    public List<Long> getPetIds() {
-        return petIds;
-    }
+    LocalDate getDate();
 
-    public void setPetIds(List<Long> petIds) {
-        this.petIds = petIds;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public Set<EmployeeSkill> getActivities() {
-        return activities;
-    }
-
-    public void setActivities(Set<EmployeeSkill> activities) {
-        this.activities = activities;
-    }
+    Set<EmployeeSkill> getActivities();
 }

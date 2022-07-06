@@ -37,4 +37,14 @@ public class EmployeeService {
     public List<Employee> findEmployeesForService(Set<EmployeeSkill> skills, LocalDate date){
         return employeeRepository.findDistinctBySkillsInAndDaysAvailableIn(skills, Set.of(date.getDayOfWeek()));
     }
+
+    @Transactional
+    public Employee getEmployeeReferenceById(Long id){
+        var existsById = employeeRepository.existsById(id);
+        if(!existsById){
+            throw new BusinessException("Invalid employee id");
+        }
+
+        return employeeRepository.getReferenceById(id);
+    }
 }

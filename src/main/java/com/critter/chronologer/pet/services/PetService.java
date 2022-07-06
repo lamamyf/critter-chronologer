@@ -8,6 +8,7 @@ import com.critter.chronologer.user.customer.dao.entities.Customer;
 import com.critter.chronologer.user.customer.services.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -36,5 +37,15 @@ public class PetService {
 
     public List<Pet> findByOwnerId(Long ownerId){
         return petRepository.findByOwnerId(ownerId);
+    }
+
+    @Transactional
+    public Pet getPetReferenceById(Long id){
+        var existsById = petRepository.existsById(id);
+        if(!existsById){
+            throw new BusinessException("Invalid pet id");
+        }
+
+        return petRepository.getReferenceById(id);
     }
 }

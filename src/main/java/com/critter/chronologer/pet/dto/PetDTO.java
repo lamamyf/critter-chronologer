@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import java.time.LocalDate;
 
 /**
- * Represents the form that pet request and response data takes. Does not map
+ * Represents the form that pet response data takes. Does not map
  * to the database directly.
  */
 public interface PetDTO {

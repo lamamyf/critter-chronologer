@@ -1,12 +1,14 @@
 package com.critter.chronologer.user.employee.dao.entities;
 
 import com.critter.chronologer.user.employee.dao.entities.enums.EmployeeSkill;
+import lombok.Getter;
 
 import javax.persistence.*;
 import java.time.DayOfWeek;
 import java.util.Set;
 
 @Entity
+@Getter
 public class Employee {
 
     @Id

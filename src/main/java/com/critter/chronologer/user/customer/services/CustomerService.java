@@ -5,6 +5,7 @@ import com.critter.chronologer.user.customer.dao.entities.Customer;
 import com.critter.chronologer.user.customer.dao.repositories.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -27,6 +28,7 @@ public class CustomerService {
                 .orElseThrow(() -> new BusinessException("Invalid pet id"));
     }
 
+    @Transactional
     public Customer getCustomerReferenceById(Long id){
         var existsById = customerRepository.existsById(id);
         if(!existsById){
