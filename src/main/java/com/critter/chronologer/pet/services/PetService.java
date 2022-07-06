@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -20,10 +21,20 @@ public class PetService {
     private final PetRepository petRepository;
     private final CustomerService customerService;
 
+    @Transactional
     public Pet save(PetType type, String name, long ownerId, LocalDate birthDate, String notes) {
         Customer owner = customerService.getCustomerReferenceById(ownerId);
-        Pet pet =  new Pet(type, name, owner, birthDate, notes);
-        return petRepository.save(pet);
+        Pet pet =  petRepository.save(new Pet(type, name, owner, birthDate, notes));
+
+        if(owner.getPets() != null){
+            owner.getPets().add(pet);
+        }else {
+            List<Pet> pets = new ArrayList<>();
+            pets.add(pet);
+            owner.setPets(pets);
+        }
+
+        return pet;
     }
 
     public Pet findById(Long id){

@@ -35,7 +35,8 @@ public class EmployeeService {
     }
 
     public List<Employee> findEmployeesForService(Set<EmployeeSkill> skills, LocalDate date){
-        return employeeRepository.findDistinctBySkillsInAndDaysAvailableIn(skills, Set.of(date.getDayOfWeek()));
+        List<Employee> employees =  employeeRepository.findDistinctBySkillsInAndDaysAvailableIn(skills, Set.of(date.getDayOfWeek()));
+        return employees.stream().filter(employee -> employee.getSkills().containsAll(skills)).toList();
     }
 
     @Transactional
